@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <style>
+    .slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Adjust as needed */
+  margin: auto;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%; /* 100% for each section */
+}
+
+.section2 {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+  </style>
+</head>
+
+<body>
+<div class="slider-container">
+  <button class="prev" onclick="prevSlide()">&#10094;</button>
+
+  <div class="slides">
+    <!-- Section 1 -->
+    <div class="section2">
+      <div class="image2">
+        <img class="door-img" src="photo/door.png" alt="Door Reinforcement">
+      </div>
+      <div class="text2">
+        <h2>Door Reinforcement</h2>
+        <hr style="background-color: rgb(180, 156, 90);" class="line2">
+        <p>Applying security film to glass greatly enhances its structural integrity...</p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section2">
+      <div class="image2">
+        <img class="glass-img" src="photo/glass.png" alt="Glass Reinforcement">
+      </div>
+      <div class="text2">
+        <h2>Glass Reinforcement</h2>
+        <hr style="background-color: rgb(180, 156, 90);" class="line2">
+        <p>Applying security film to glass greatly enhances its structural integrity...</p>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section2">
+      <div class="image2">
+        <img class="frame-img" src="photo/window1.png" alt="Window Frame Reinforcement">
+      </div>
+      <div class="text2">
+        <h2>Window Frame Reinforcement</h2>
+        <hr style="background-color: rgb(180, 156, 90);" class="line2">
+        <p>Windows are often considered one of the most vulnerable areas...</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="next" onclick="nextSlide()">&#10095;</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+
+    function showSlide(slideIndex) {
+      const slides = document.querySelector('.slides');
+      const totalSlides = document.querySelectorAll('.section2').length;
+
+      if (slideIndex >= totalSlides) {
+        currentSlide = 0;
+      } else if (slideIndex < 0) {
+        currentSlide = totalSlides - 1;
+      } else {
+        currentSlide = slideIndex;
+      }
+
+      const slideWidth = document.querySelector('.section2').offsetWidth;
+      slides.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    body{
+      background-color: rgba(23, 23, 23, 0.769);
+    }
+    /*
+    .services-section {
+      display: flex;
+      justify-content: space-around;
+      padding: 100px 40px;
+    }
+
+    .service-box {
+      text-align: center;
+      background-color: #d2cfcf;
+      padding: 60px 20px 20px;
+      height: 30vh;
+      width: 400px;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      position: relative;
+    }
+
+    .service-box:hover{
+      background-color: rgb(180, 156, 90);
+      transform: scale(1.2);
+      text-shadow: 1px 1px 14px rgba(0, 0, 0, 0.439);
+
+    }
+    .logo-container {
+      position: absolute;
+      top: -50px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .icon-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background-color: rgb(180, 156, 90);
+      color: black;
+      font-size: 40px;
+      line-height: 1;
+      border: 3px solid #f0f0f0;
+    }
+
+    .box-content h3 {
+      margin: 10px 0;
+      font-size: 1.5rem;
+    }
+
+    .box-content p {
+      font-size: 1rem;
+      color: #000000;
+    }
+      <div class="state">Alabama</div>
+      <div class="state">Arizona</div>
+      <div class="state">Arkansas</div>
+      <div class="state">California</div>
+      <div class="state">Colorado</div>
+      <div class="state">Connecticut</div>
+      <div class="state">Delaware</div>
+      <div class="state">Florida</div>
+      <div class="state">Georgia</div>
+      <div class="state">Idaho</div>
+      <div class="state">Illinois</div>
+      <div class="state">Indiana</div>
+      <div class="state">Iowa</div>
+      <div class="state">Kansas</div>
+      <div class="state">Kentucky</div>
+      <div class="state">Louisiana</div>
+      <div class="state">Maine</div>
+      <div class="state">Maryland</div>
+      <div class="state">Massachusetts</div>
+      <div class="state">Michigan</div>
+      <div class="state">Minnesota</div>
+      <div class="state">Mississippi</div>
+      <div class="state">Missouri</div>
+      <div class="state">Montana</div>
+      <div class="state">Nebraska</div>
+      <div class="state">Nevada</div>
+      <div class="state">New Hampshire</div>
+      <div class="state">New Jersey</div>
+      <div class="state">New Mexico</div>
+      <div class="state">New York</div>
+      <div class="state">North Carolina</div>
+      <div class="state">North Dakota</div>
+      <div class="state">Ohio</div>
+      <div class="state">Oklahoma</div>
+      <div class="state">Oregon</div>
+      <div class="state">Pennsylvania</div>
+      <div class="state">Rhode Island</div>
+      <div class="state">South Carolina</div>
+      <div class="state">South Dakota</div>
+      <div class="state">Tennessee</div>
+      <div class="state">Texas</div>
+      <div class="state">Utah</div>
+      <div class="state">Vermont</div>
+      <div class="state">Virginia</div>
+      <div class="state">Washington</div>
+      <div class="state">West Virginia</div>
+      <div class="state">Wisconsin</div>
+      <div class="state">Wyoming</div>
+*/
+/* Basic styles for button and dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  background-color: rgb(180, 156, 90);
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 10px;
+}
+.dropdown-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 1500px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  max-height: 400px;
+  overflow-y: scroll; /* Allows scrolling if dropdown exceeds height */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.dropdown-grid span {
+  padding: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.dropdown-grid span:hover {
+  background-color: #ccc;
+}
+
+/* Show dropdown on button click */
+.show {
+  display: block;
+}
+
+
+</style>
+</head>
+
+<body>
+  <!--
+  <div class="services-section">
+    <div class="service-box">
+      <div class="logo-container">
+        <i class="fa-solid fa-door-closed icon-circle"></i>
+      </div>
+      <div class="box-content">
+        <h3>Door Reinforcement</h3>
+        <p>We team up with Night Lock to strengthen the door security, safeguarding your home and or business against break-ins.
+        Providing a
+        barricade to protect your valuables, product, loved ones/customers and overall safty!.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <div class="logo-container">
+        <i class="fa-solid fa-person-through-window icon-circle"></i>
+      </div>
+      <div class="box-content">
+        <h3>Window/Frame Reinforcement</h3>
+        <p>Windows are often considered one of the most vulnerable areas of a home. By applying security film, we not only
+        reinforce the glass themselves but also enhance the strength of the window frames and hardware.</p>
+      </div>
+    </div>
+
+    <div class="service-box">
+      <div class="logo-container">
+        <i class="fa-solid fa-shield-halved icon-circle"></i>
+      </div>
+      <div class="box-content">
+        <h3>Security Protection</h3>
+        <p>Applying security film to glass greatly enhances its structural integrity, making it much more difficult to break and
+        gain access to the interior of the building or home.3.</p>
+      </div>
+    </div>
+  </div>-->
+
+<div class="state-section">
+  <div class="title" onclick="toggleStates()">
+    <h2>SERVING PROTECTION TO ALL OF 48 STATES</h2>  
+  </div>
+
+<div class="dropdown">
+  <button id="stateButton" class="dropdown-btn">Show States<span class="dropdown-arrow">▼</span></button>
+  <div id="stateDropdown" class="dropdown-content">
+    <div class="dropdown-grid">
+      <span class="state">Arizona</span>
+      <span class="state">Arkansas</span>
+      <span class="state">California</span>
+      <span class="state">Colorado</span>
+      <span class="state">Connecticut</span>
+      <span class="state">Delaware</span>
+      <span class="state">Florida</span>
+      <span class="state">Georgia</span>
+      <span class="state">Idaho</span>
+      <span class="state">Illinois</span>
+      <span class="state">Indiana</span>
+      <span class="state">Iowa</span>
+      <span class="state">Kansas</span>
+      <span class="state">Kentucky</span>
+      <span class="state">Louisiana</span>
+      <span class="state">Maine</span>
+      <span class="state">Maryland</span>
+      <span class="state">Massachusetts</span>
+      <span class="state">Michigan</span>
+      <span class="state">Minnesota</span>
+      <span class="state">Mississippi</span>
+      <span class="state">Missouri</span>
+      <span class="state">Montana</span>
+      <span class="state">Nebraska</span>
+      <span class="state">Nevada</span>
+      <span class="state">New Hampshire</span>
+      <span class="state">New Jersey</span>
+      <span class="state">New Mexico</span>
+      <span class="state">New York</span>
+      <span class="state">North Carolina</span>
+      <span class="state">North Dakota</span>
+      <span class="state">Ohio</span>
+      <span class="state">Oklahoma</span>
+      <span class="state">Oregon</span>
+      <span class="state">Pennsylvania</span>
+      <span class="state">Rhode Island</span>
+      <span class="state">South Carolina</span>
+      <span class="state">South Dakota</span>
+      <span class="state">Tennessee</span>
+      <span class="state">Texas</span>
+      <span class="state">Utah</span>
+      <span class="state">Vermont</span>
+      <span class="state">Virginia</span>
+      <span class="state">Washington</span>
+      <span class="state">West Virginia</span>
+      <span class="state">Wisconsin</span>
+      <span class="state">Wyoming</span>
+      <span class="state">Alabama</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Toggle the dropdown on button click
+    document.getElementById("stateButton").onclick = function () {
+      document.getElementById("stateDropdown").classList.toggle("show");
+    };
+
+    // Close the dropdown if clicked outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('#stateButton')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    };
+
+</script>
+
+</body>
+
+</html>
